@@ -17,7 +17,7 @@
         <nav class="navbar footer">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Fortachon & Bonitura</a>
+                    <a class="navbar-brand" href="#">Health Via</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Inicio</a></li>
@@ -27,15 +27,14 @@
         </nav>
         <br><br>
         <div class="row">
-            <div class="col-lg-5">
-                <h1 class="display-1">Fortachon & Bonitura</h1>
-                <img class="img-responsive" src="img/hotel2.png" alt="">
+            <div class="col-sm-2">
             </div>
-            <div class="col-lg-2">
+            <div class="col-sm-2">
+            <h1 class="display-1">Health Via</h1>
                 <div class="form-group">
                     <br>
                     <label for="Usuario">Usuario:</label>
-                    <input type="text" class="form-control" name="usuario" placeholder="Ingresa tu usuario">
+                    <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu usuario">
                 </div>
                 <div class="form-group">
                     <label for="Contraseña">Contraseña:</label>
@@ -62,11 +61,14 @@
                     <select class="form-control" name="alergia" id="Personas">
                         <option>Alergia al mani</option>
                         <option>Otra</option>
-                        <option>Otra</option>
+                        <option>Ninguna</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn">Registrar</button>
+                    <button type="submit" name="registrar" class="btn">Registrar</button>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="login" class="btn">Ya tengo una cuenta</button>
                 </div>
             </div>
         </div>

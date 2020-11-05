@@ -1,0 +1,76 @@
+label {
+  font-style: italic;
+  color: #ffc857;
+}
+h1 {
+  font-family: Helvetica;
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+}
+
+h1.inicio{
+
+    color: #ffc857;
+
+}
+h2 {
+  font-family: Helvetica;
+  font-style: italic;
+  color: #ffffff;
+  text-align: left;
+}
+h2.centrar {
+  text-align: center;
+}
+
+
+
+body {
+  background-color: #4b3f72;
+}
+nav {
+  background-color: #1f2041;
+}
+a {
+  color: white;
+}
+button {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-weight: bolder;
+  color: #ffffff;
+  background-color: #ffc857;
+}
+
+.numero {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+img.images {
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+}
+
+img.icon {
+  height: 40px;
+  padding-top: 10px;
+}
+
+.total {
+  font-size: large;
+  font-weight: bold;
+  font-family: Helvetica;
+  color: #ffc857;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.recurso {
+  padding-left: 30px;
+}

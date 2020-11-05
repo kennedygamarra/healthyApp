@@ -38,7 +38,7 @@
                     <input type="text" class="form-control" name="usuario" placeholder="Ingresa tu usuario">
                 </div>
                 <div class="form-group">
-                    <label for="Contraseña">Contraseña:</label>
+                    <label for="Contreña">Contraseña:</label>
                     <input type="password" class="form-control" name="contraseña" placeholder="Ingresa tu contraseña">
                 </div>
                 <div class="form-group">

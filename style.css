@@ -24,26 +24,30 @@ h2.centrar {
   text-align: center;
 }
 
-
-
 body {
   background-color: #4b3f72;
 }
 nav {
   background-color: #1f2041;
 }
-a {
+span, a{
   color: white;
 }
-button {
+button,a.button,a.buttonInverse {
   text-align: center;
   display: block;
   margin: 0 auto;
   font-weight: bolder;
   color: #ffffff;
   background-color: #ffc857;
+  font-size: large;
 }
 
+a.buttonInverse{
+  background-color: #ffffff;
+  color: #ffc857;
+
+}
 .numero {
   text-align: center;
   display: block;

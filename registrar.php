@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <title>PIA</title>
@@ -27,12 +28,12 @@
         </nav>
         <br><br>
         <div class="row">
-        <div class="col-md-5">
+            <div class="col-md-5">
             </div>
             <div class="col-md-2">
-            <h1 class="display-1">Health Via</h1>
-            <br>
-            <h1 class="display-1">Registrarme</h1>
+                <h1 class="display-1">Health Via</h1>
+                <br>
+                <h1 class="display-1">Registrarme</h1>
                 <div class="form-group">
                     <br>
                     <label for="Usuario">Usuario:</label>
@@ -67,42 +68,55 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <span><a href="login.php">Prefiero iniciar sesion</a></span>
+                    <br>
                     <button type="submit" name="registrar" class="btn">Registrar</button>
                 </div>
-                <div class="form-group">
-                    <button type="submit" name="login" class="btn">Ya tengo una cuenta</button>
-                </div>
+                <?php
+                include "conexion.php";
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                    $nombre = $_POST["nombre"];
+                    $contraseña = $_POST["contraseña"];
+                    $peso = $_POST["peso"];
+                    $altura = $_POST["altura"];
+                    $genero = $_POST["genero"];
+                    $alergia = $_POST["alergia"];
+                    if (
+                        !empty($nombre) && !empty($contraseña) &&
+                        !empty($peso) && !empty($altura) && !empty($alergia) && !empty($genero)
+                    ) {
+                        //Encriptar contraseña
+                        $pass = password_hash($contraseña, PASSWORD_BCRYPT);
+
+
+                        $insertar = "INSERT INTO usuario(nombre, contraseña, peso, altura, alergia, genero) VALUES ('$nombre',
+'$pass','$peso','$altura','$alergia','$genero')";
+
+                        $resultado = mysqli_query($conexion, $insertar);
+                        if (!$resultado) {
+                            $aviso = "Error al registrar, revise los datos ingresados";
+                        } else {
+
+                            $aviso = "Registro exitoso";
+                            //enviar a la pagina inicio
+                        }
+                        mysqli_close($conexion);
+                    } else {
+                        $aviso = "Todos los campos deben ser rellenados";
+                    }
+                    echo '<div class="alert alert-warning">
+    <strong>' . $aviso . '</strong>
+    </div>';
+                }
+
+                ?>
+
             </div>
         </div>
     </form>
 
+
+
 </body>
-
-<?php
-include "conexion.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-        $nombre = $_POST["nombre"];
-        $contraseña = $_POST["contraseña"];
-        $peso = $_POST["peso"];
-        $altura = $_POST["altura"];
-        $genero = $_POST["genero"];
-        $alergia = $_POST["alergia"];
-        //Encriptar contraseña
-        $pass = password_hash($contraseña, PASSWORD_BCRYPT);
-        //Para comprobar la contraseña se usa
-        //password_verify($contraseña, $pass)
-
-        $insertar = "INSERT INTO usuario(nombre, contraseña, peso, altura, alergia, genero) VALUES ('$nombre',
-'$pass','$peso','$altura','$alergia','$genero')";
-
-        $resultado = mysqli_query($conexion, $insertar);
-        if (!$resultado) {
-            echo "error al registrar";
-        } else {
-
-            echo "Registro exitoso";
-        }
-        mysqli_close($conexion);
-    }

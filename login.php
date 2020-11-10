@@ -49,6 +49,9 @@
                     <button type="submit" name="login" onclick="accion();" class="btn">Aceptar</button>
                 </div>
                 <?php
+
+                session_start();
+
                 include "conexion.php";
 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -69,12 +72,13 @@
 
                         if (password_verify($contraseña, $pw)) {
                             echo "USUARIO EXISTE";
-                            header('Location: index.php');
+                            $_SESSION['usuario'] = $nombre;
+                            header('Location: recomendacion.php');
                             //ya que el usuario existe que lo envie a donde deba.
 
                         } else {
 
-                            echo '<div class="alert alert-danger">
+                            echo '<div class="alert alert-warning">
     <strong>Error al iniciar sesion</strong>
     </div>'; //Fail
                         }

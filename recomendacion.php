@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -32,12 +38,19 @@
             </div>
             <div class="col-md-2">
                 <h1 class="display-1">Health Via</h1>
+                <h1 class="display-1">Bienvenido <?php echo
+                $_SESSION['usuario'];
+                ?>
+                </h1>
+                <a href="cerrarSesion.php">Cerrar Sesion</a>
             </div>
         </div>
     </form>
 
 </body>
 <?php
+
+session_start();
 
 include "conexion.php";
 //falta la bd

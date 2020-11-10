@@ -100,6 +100,7 @@
                         } else {
 
                             $aviso = "Registro exitoso";
+                            header('Location: login.php');
                             //enviar a la pagina inicio
                         }
                         mysqli_close($conexion);

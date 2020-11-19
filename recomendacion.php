@@ -49,6 +49,8 @@ session_start();
 
         include "conexion.php";
 
+      
+
         $consultar = "SELECT nombre, tipo, link FROM plato";
         $resultado = mysqli_query($conexion, $consultar);
         $repeticiones = mysqli_num_rows($resultado);
@@ -56,7 +58,8 @@ session_start();
         for ($i = 0; $i < ($repeticiones / 3); $i++) {
             echo '<div class="container">
         <div class="row">';
-            for ($j = 0; $j < 3; $j++) {
+            while($repeticiones>0){
+                $repeticiones--;
                 $row = mysqli_fetch_assoc($resultado);
                 echo '<div class="col-md-4"> <div id="demo" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">

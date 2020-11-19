@@ -74,14 +74,14 @@
                             echo "USUARIO EXISTE";
                             $_SESSION['usuario'] = $nombre;
                             header('Location: recomendacion.php');
-                            //ya que el usuario existe que lo envie a donde deba.
-
+                            //ya que el usuario existe que lo envie a donde deba.    
                         } else {
 
                             echo '<div class="alert alert-warning">
     <strong>Error al iniciar sesion</strong>
     </div>'; //Fail
                         }
+                        mysqli_close($conexion);
                     }
                 }
                 ?>

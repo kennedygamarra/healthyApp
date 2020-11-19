@@ -24,11 +24,11 @@ session_start();
         <nav class="navbar footer">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Health Via</a>
+                    <a class="navbar-brand" href="">Health Via</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Contactanos</a></li>
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,40 +39,38 @@ session_start();
             <div class="col-md-2">
                 <h1 class="display-1">Health Via</h1>
                 <h1 class="display-1">Bienvenido <?php echo
-                $_SESSION['usuario'];
-                ?>
+                                                        $_SESSION['usuario'];
+                                                    ?>
+
                 </h1>
-                <a href="cerrarSesion.php">Cerrar Sesion</a>
             </div>
         </div>
+        <?php
+
+        include "conexion.php";
+
+        $consultar = "SELECT nombre, tipo, link FROM plato";
+        $resultado = mysqli_query($conexion, $consultar);
+        $repeticiones = mysqli_num_rows($resultado);
+
+        for ($i = 0; $i < ($repeticiones / 3); $i++) {
+            echo '<div class="container">
+        <div class="row">';
+            for ($j = 0; $j < 3; $j++) {
+                $row = mysqli_fetch_assoc($resultado);
+                echo '<div class="col-md-4"> <div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="item active"> <img class="images" src="img/' . $row["link"] . '"><div class="carousel-caption">
+          <h3>' . $row["nombre"] . '</h3>
+          <p>' . $row["tipo"] . '</p>
+        </div>   
+      </div>
+  </div>
+  </div> </div>';
+            }
+            echo '</div> </div> <br><br>';
+        }
+        ?>
     </form>
 
 </body>
-<?php
-
-session_start();
-
-include "conexion.php";
-//falta la bd
-$consultar = "SELECT * FROM galeria";
-$resultado = mysqli_query($conexion, $consultar);
-$repeticiones = mysqli_num_rows($resultado);
-
-for ($i = 0; $i < ($repeticiones / 3); $i++) {
-    echo '<div class="container">
-      <div class="row">';
-    for ($j = 0; $j < 3; $j++) {
-        $row = mysqli_fetch_assoc($resultado);
-        echo '<div class="col-md-4"> <div id="demo" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="item active"> <img src="' . $row["link"] . '"><div class="carousel-caption">
-        <h3>' . $row["tituloImagen"] . '</h3>
-        <p>' . $row["descripcion"] . '</p>
-      </div>   
-    </div>
-</div>
-</div> </div>';
-    }
-    echo '</div> </div> <br><br>';
-}
-?>

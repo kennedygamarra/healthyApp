@@ -54,11 +54,11 @@ a.buttonInverse{
   margin: 0 auto;
 }
 
-img.images {
-  height: 130px;
+img.images,div.images {
+  height: 160px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 50px;
+  padding: 50px;
 }
 
 img.icon {

@@ -26,25 +26,29 @@
                 </ul>
             </div>
         </nav>
+
         <br><br>
         <div class="row">
             <h1 class="display-1">Health Via</h1>
             <br><br>
-            <h1 class="display-1">Cientos de platos para que alimentes tu cuerpo de la mejor manera</h1>
+            <h1 class="display-1"> Cientos de platos para que alimentes tu cuerpo de la mejor manera</h1>
             </h2>
-                        <br><br>
+            <div class="row">
+                <br><br>
                 <div class="form-group">
 
-                <div class="col-md-5">
-                </div>
-                    <div class="col-md-2">
-                    <a href="registrar.php" class="btn button">Registrarme</a>
+                    <div class="col-md-2 col-center">
+                        <a href="registrar.php" class="btn button">Registrarme</a>
 
-                <br>
-                    <a href="login.php" class="btn buttonInverse">Iniciar sesion</a>
+                        <br>
+                        <a href="login.php" class="btn buttonInverse">Iniciar sesion</a>
                     </div>
                 </div>
+
             </div>
+
+
+        </div>
     </form>
 
 </body>

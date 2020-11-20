@@ -1,3 +1,12 @@
+<?php 
+session_start();
+
+ if (isset($_SESSION['usuario'])) {
+    header('Location: recomendacion.php');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,16 +30,14 @@
                     <a class="navbar-brand" href="#">Health Via</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="#">Contactanos</a></li>
                 </ul>
             </div>
         </nav>
         <br><br>
         <div class="row">
-            <div class="col-md-5">
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-center">
                 <h1 class="display-1">Health Via</h1>
                 <br>
                 <h1 class="display-1">Login</h1>
@@ -44,13 +51,12 @@
                     <input type="password" class="form-control" name="contraseña" placeholder="Ingresa tu contraseña">
                 </div>
                 <span><a href="registrar.php">No tengo una cuenta</a></span>
-                <br>
+                <br><br>
                 <div class="form-group">
-                    <button type="submit" name="login" onclick="accion();" class="btn">Aceptar</button>
+                    <button class="btn boton" type="submit" name="login" onclick="accion();" class="btn">Aceptar</button>
                 </div>
                 <?php
 
-                session_start();
 
                 include "conexion.php";
 

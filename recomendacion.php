@@ -27,29 +27,28 @@ session_start();
                     <a class="navbar-brand" href="">Health Via</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Inicio</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="cerrarSesion.php">Cerrar Sesion</a></li>
                 </ul>
             </div>
         </nav>
         <br><br>
         <div class="row">
+        <h1 class="display-1">Health Via</h1>
+        <h1 class="display-1">Bienvenido <?php echo
+                                                        $_SESSION['usuario'];
+                                                    ?>
+                                                    </h1>
             <div class="col-md-5">
             </div>
             <div class="col-md-2">
-                <h1 class="display-1">Health Via</h1>
-                <h1 class="display-1">Bienvenido <?php echo
-                                                        $_SESSION['usuario'];
-                                                    ?>
 
-                </h1>
+                
             </div>
         </div>
         <?php
 
         include "conexion.php";
-
-      
 
         $consultar = "SELECT nombre, tipo, link FROM plato";
         $resultado = mysqli_query($conexion, $consultar);
@@ -61,13 +60,13 @@ session_start();
             while($repeticiones>0){
                 $repeticiones--;
                 $row = mysqli_fetch_assoc($resultado);
-                echo '<div class="col-md-4"> <div id="demo" class="carousel slide" data-ride="carousel">
+                echo '<div class="col-md-4">
     <div class="carousel-inner">
-      <div class="item active"> <img class="images" src="img/' . $row["link"] . '"><div class="carousel-caption">
-          <h3>' . $row["nombre"] . '</h3>
-          <p>' . $row["tipo"] . '</p>
+      <div class="item active"> <img class="image" src="img/' . $row["link"] . '">
+      <div class="carousel-caption">
+          <h3 class="objeto">' . $row["nombre"] . '</h3>
+          <p class="objeto"> ' . $row["tipo"] . '</p>
         </div>   
-      </div>
   </div>
   </div> </div>';
             }

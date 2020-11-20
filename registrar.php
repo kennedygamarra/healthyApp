@@ -28,9 +28,7 @@
         </nav>
         <br><br>
         <div class="row">
-            <div class="col-md-5">
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-3 col-center">
                 <h1 class="display-1">Health Via</h1>
                 <br>
                 <h1 class="display-1">Registrarme</h1>
@@ -69,8 +67,8 @@
                 </div>
                 <div class="form-group">
                     <span><a href="login.php">Prefiero iniciar sesion</a></span>
-                    <br>
-                    <button type="submit" name="registrar" class="btn">Registrar</button>
+                    <br><br>
+                    <button class="btn boton" type="submit" name="registrar" class="btn">Registrar</button>
                 </div>
                 <?php
                 include "conexion.php";

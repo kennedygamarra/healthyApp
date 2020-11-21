@@ -2,15 +2,45 @@ label {
   font-style: italic;
   color: #ffc857;
 }
-h1 {
-  font-family: Helvetica;
-  font-style: italic;
+h1.titulo{
+
+  font-family: 'Segoe UI';
+  font-style: inherit;
   color: #ffffff;
   text-align: center;
+  
 }
+
 
 h1.inicio {
   color: #ffc857;
+}
+
+h1.inverse{
+
+  font-family: 'Segoe UI';
+  font-style: inherit;
+  color: #4b3f72;
+  text-align: center;
+  margin: 80px 80px 30px 0px;
+  
+}
+h2.sub-blanco, h2.sub-inverse{
+  font-family: 'Segoe UI';
+  font-style: inherit;
+  color: #ffffff;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 20px;
+  
+}
+
+h2.sub-inverse{
+  color: #4b3f72;
+  text-align: justify;
+  font-style: italic;
+  margin: 0px 80px 0px 30px;
+  
 }
 h2 {
   font-family: Helvetica;
@@ -21,7 +51,13 @@ h2 {
 h2.centrar {
   text-align: center;
 }
+h2.amarillo{
+  font-family: 'Segoe UI';
+  font-style: inherit;
+  color: #ffc857;
+  text-align: center;
 
+}
 h3.objeto {
   font-size: 25px;
   font-family: Helvetica;
@@ -61,7 +97,7 @@ a.buttonInverse {
   font-weight: bolder;
   color: #ffffff;
   background-color: #ffc857;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 a.buttonInverse {
@@ -112,9 +148,13 @@ img.image{
   filter: saturate(50%);
 }
 
-img.icon {
-  height: 40px;
-  padding-top: 10px;
+img.icon{
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .total {
@@ -124,4 +164,31 @@ img.icon {
   color: #ffc857;
   text-align: left;
   padding-left: 50px;
+}
+
+.row-2{
+
+  background-color: #ffffff;
+
+}
+
+
+.div-banner{
+
+  max-width: 700px;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 50px;
+  text-align: center;
+
+}
+
+
+img.banner{
+text-align: center;
+  object-fit: cover;
+  filter: brightness(85%);
+  cursor: pointer;
+  border-radius: 20px;
 }

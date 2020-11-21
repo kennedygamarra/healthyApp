@@ -29,26 +29,65 @@
 
         <br><br>
         <div class="row">
-            <h1 class="display-1">Health Via</h1>
-            <br><br>
-            <h1 class="display-1"> Cientos de platos para que alimentes tu cuerpo de la mejor manera</h1>
+            <h1 class="titulo">Health Via</h1>
+
+            <h2 class="sub-blanco"> Cientos de platos para que alimentes tu cuerpo de la mejor manera</h1>
             </h2>
             <div class="row">
                 <br><br>
+
+                <div class="row row-2">
+                    <br>
+                    <div class="col-md-6">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                            <div class="carousel-inner div-banner">
+                                <div class="item active">
+                                    <img class="banner" src="img/banner1.jpg">
+                                </div>
+
+                                <div class="item">
+                                    <img class="banner" src="img/banner2.jpg">
+                                </div>
+
+                                <div class="item">
+                                    <img class="banner" src="img/banner3.jpg">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="inverse">Encuentra la mejor seleccion de platos y recetas para ti</h1>
+                        <h2 class="sub-inverse">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repudiandae consequatur tempora architecto corrupti soluta veritatis sunt facilis expedita iste eum nam vitae tenetur nemo. Illum ducimus rem quis minus?</h2>
+                    </div>
+
+
+
+
+                    <br><br>
+                </div>
                 <div class="form-group">
-
-                    <div class="col-md-2 col-center">
-                        <a href="registrar.php" class="btn button">Registrarme</a>
-
+                    <br><br>
+                    <div clas="container-fluid">
+                        <h1 class="titulo">Descubre un mundo nuevo de comida para tí</h1>
+                        <img class="icon" src="img/icon1.png" alt="">
                         <br>
-                        <a href="login.php" class="btn buttonInverse">Iniciar sesion</a>
+                        <h2 class="amarillo">¡INICIA YA!</h2>
+                        <br>
+                        <div class="col-md-2 col-center">
+                            <a href="registrar.php" class="btn button">Registrarme</a>
+
+                            <br>
+                            <a href="login.php" class="btn buttonInverse">Iniciar sesion</a>
+                        </div>
                     </div>
                 </div>
-
             </div>
 
 
         </div>
     </form>
+    <br><br>
 
 </body>

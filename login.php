@@ -38,9 +38,9 @@ session_start();
         <br><br>
         <div class="row">
             <div class="col-md-3 col-center">
-                <h1 class="display-1">Health Via</h1>
+                <h1 class="titulo">Health Via</h1>
                 <br>
-                <h1 class="display-1">Login</h1>
+                <h1 class="sub-blanco">Login</h1>
                 <div class="form-group">
                     <br>
                     <label for="Usuario">Usuario:</label>

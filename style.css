@@ -1,3 +1,10 @@
+body {
+  background-color: #4b3f72;
+}
+nav{
+  background-color: #4b3f72;
+  filter: brightness(95%);
+}
 label {
   font-style: italic;
   color: #ffc857;
@@ -25,7 +32,7 @@ h1.inverse{
   margin: 80px 80px 30px 0px;
   
 }
-h2.sub-blanco, h2.sub-inverse{
+h1.sub-blanco,h2.sub-blanco, h2.sub-inverse{
   font-family: 'Segoe UI';
   font-style: inherit;
   color: #ffffff;
@@ -33,6 +40,10 @@ h2.sub-blanco, h2.sub-inverse{
   font-weight: lighter;
   font-size: 20px;
   
+}
+h1.sub-blanco{
+
+  font-size: 26px;
 }
 
 h2.sub-inverse{
@@ -78,12 +89,7 @@ p.objeto {
   text-shadow: 2px 2px 4px #000000;
 }
 
-body {
-  background-color: #4b3f72;
-}
-nav {
-  background-color: #1f2041;
-}
+
 span,
 a {
   color: white;
@@ -151,9 +157,10 @@ img.image{
 img.icon{
   height: 100px;
   width: 100px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+
 
 }
 

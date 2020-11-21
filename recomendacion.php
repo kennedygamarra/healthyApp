@@ -34,8 +34,8 @@ session_start();
         </nav>
         <br><br>
         <div class="row">
-        <h1 class="display-1">Health Via</h1>
-        <h1 class="display-1">Bienvenido <?php echo
+        <h1 class="titulo">Health Via</h1>
+        <h1 class="sub-blanco">Bienvenido: <?php echo
                                                         $_SESSION['usuario'];
                                                     ?>
                                                     </h1>

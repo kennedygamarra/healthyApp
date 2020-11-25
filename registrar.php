@@ -29,9 +29,8 @@
         <br><br>
         <div class="row">
             <div class="col-md-3 col-center">
-                <h1 class="display-1">Health Via</h1>
-                <br>
-                <h1 class="display-1">Registrarme</h1>
+                <h1 class="titulo">Health Via</h1>
+                <h1 class="sub-blanco">Registrarme</h1>
                 <div class="form-group">
                     <br>
                     <label for="Usuario">Usuario:</label>
@@ -43,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Peso">Peso:</label>
-                    <input type="text" class="form-control" name="peso" placeholder="Ingresa tu altura en kg">
+                    <input type="text" class="form-control" name="peso" placeholder="Ingresa tu peso en kg">
                 </div>
                 <div class="form-group">
                     <label for="Altura">Altura:</label>

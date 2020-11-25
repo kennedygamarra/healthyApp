@@ -5,6 +5,10 @@ nav{
   background-color: #4b3f72;
   filter: brightness(95%);
 }
+li.in-line {
+  padding-top: 6px;
+  display: inline-flex;
+}
 label {
   font-style: italic;
   color: #ffc857;

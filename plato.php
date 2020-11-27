@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_GET["id"])){
+if (!isset($_GET["id"])) {
     exit();
 }
 $id = $_GET["id"];
@@ -28,7 +28,7 @@ $row = mysqli_fetch_assoc($resultado);
 
 </head>
 
-<body>
+<body >
     <form method="post" action="recomendacion.php">
         <nav class="navbar footer">
             <div class="container-fluid">
@@ -48,18 +48,22 @@ $row = mysqli_fetch_assoc($resultado);
                 </ul>
             </div>
         </nav>
-        <br><br>
-        <div class="row">
-            <div class="col-md-12">
-            <?php
-                echo $row["nombre"];
+            <div class="background">
+                <?php echo '<img class="background" src="img/' . $row["link"] . '" alt="">' ?>
+                <div class="row row-background">
+                    <br>
+                    <div class="col-md-8 col-center plato">
+                        <br>
+                        <?php echo '<h1 class="inverse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor suscipit enim ducimus nemo. Magnam iste corrupti sunt quod quo labore eligendi veniam facilis temporibus perferendis? Fugit animi iure maxime error!</h1>
+                            <h1 class="inverse">'.$row["tipo"].'</h1>
+                            <h1 class="inverse">'.$row["vitaminas"].'</h1>
+                            ' ?>
+                            <br><br>
+                    </div>
+                </div>
+            </div>
 
-            ?>
         
-        
-        </div>
-
-        </div>
     </form>
 
 </body>

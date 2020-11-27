@@ -4,6 +4,10 @@ body {
 nav{
   background-color: #4b3f72;
   filter: brightness(95%);
+  margin: 0px;
+}
+.navbar{
+  margin: 0;
 }
 li.in-line {
   padding-top: 6px;
@@ -120,6 +124,7 @@ a.buttonInverse {
   margin: 0 auto;
 }
 
+
 .col-center{
   float: none;
   margin-left: auto;
@@ -140,7 +145,28 @@ img.image{
   filter: brightness(85%);
   cursor: pointer;
 }
+.background{
 
+  width: 100%;
+  max-height: 10em;
+  padding: 0;
+  box-shadow: 5px 10px 18px #1f2041;
+
+  
+}
+.row-background{
+
+  background-color: #4b3f72;
+}
+
+
+img.background{
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(85%);
+  max-height: 700px;
+  position: absolute;
+}
 .image:hover {
   filter: brightness(100%);
   animation: burbuja 1.3s infinite alternate;
@@ -195,6 +221,14 @@ img.icon{
 
 }
 
+div.plato{
+  background-color: #ffffff;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: 400px;
+  box-shadow: 0px 42px 42px rgba(0, 0,0,0.2);
+
+}
 
 img.banner{
 text-align: center;

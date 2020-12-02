@@ -51,8 +51,23 @@ session_start();
         <?php
 
         include "conexion.php";
+        $usuario = $_SESSION["usuario"];
+        $consultar = "SELECT * FROM usuario WHERE nombre = '$usuario'";
+        $resultado = mysqli_query($conexion, $consultar);
+        $obj = mysqli_fetch_object($resultado); 
+        $imc = round((($obj->peso)/($obj->altura * $obj->altura)*10000),1);
+        if($imc <= 18.5){
+            $consultaImc = "SELECT nombre, tipo, link , idplato FROM plato WHERE levenshtein('Alto en proteina', tipo) BETWEEN 0 AND 5";
+        }if($imc >= 18.5 && $imc <= 24.9){
+            $consultaImc = "SELECT nombre, tipo, link , idplato FROM plato";
+        }if($imc >= 25 && $imc <= 29.9){
+            $consultar = "SELECT nombre, tipo, link , idplato FROM plato WHERE kalorias <= 700";
+        }if($imc >= 30){
+            $consultaImc = "SELECT nombre, tipo, link , idplato FROM plato WHERE kalorias <= 600";
+        }
 
-        
+
+
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $buscar = $_POST["buscar"];
@@ -85,8 +100,8 @@ session_start();
                         }
             }
         }else{
-            $consultar = "SELECT nombre, tipo, link , idplato FROM plato";
-        $resultado = mysqli_query($conexion, $consultar);
+    
+        $resultado = mysqli_query($conexion, $consultaImc);
         $repeticiones = mysqli_num_rows($resultado);
 
         for ($i = 0; $i < ($repeticiones / 3); $i++) {

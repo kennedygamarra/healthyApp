@@ -1,14 +1,26 @@
 <?php
 session_start();
+
 if (!isset($_GET["id"])) {
     exit();
 }
 $id = $_GET["id"];
+$nomusu  = $_SESSION['usuario'];
+
 include "conexion.php";
+
 $consultar = "SELECT * FROM plato WHERE idplato = $id";
 $resultado = mysqli_query($conexion, $consultar);
 $row = mysqli_fetch_assoc($resultado);
 
+$consultarConteo = "SELECT COUNT(idcomentario) as conteo FROM comentario WHERE idplato = '$id'";
+$resultadoComentario = mysqli_query($conexion, $consultarConteo);
+$rowConteo = mysqli_fetch_assoc($resultadoComentario);
+$conteo = $rowConteo['conteo'];
+
+$consultarComentario = "SELECT * FROM comentario WHERE idplato = '$id'";
+$resultadoComentario = mysqli_query($conexion, $consultarComentario);
+$rowComentario = mysqli_fetch_assoc($resultadoComentario);
 ?>
 
 
@@ -28,8 +40,8 @@ $row = mysqli_fetch_assoc($resultado);
 
 </head>
 
-<body >
-    <form method="post" action="recomendacion.php">
+<body>
+    <form method="post">
         <nav class="navbar footer">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -37,7 +49,6 @@ $row = mysqli_fetch_assoc($resultado);
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-
                         <div class="search-container">
                             <input type="text" placeholder="Buscar.." name="buscar">
                             <button type="submit"><i class="fa fa-search"></i></button>
@@ -48,22 +59,72 @@ $row = mysqli_fetch_assoc($resultado);
                 </ul>
             </div>
         </nav>
-            <div class="background">
-                <?php echo '<img class="background" src="img/' . $row["link"] . '" alt="">' ?>
-                <div class="row row-background">
+        <div class="background">
+            <?php echo '<img class="background" src="img/' . $row["link"] . '" alt="">' ?>
+            <div class="row row-background">
+                <br>
+                <div class="col-md-6 col-center plato">
                     <br>
-                    <div class="col-md-8 col-center plato">
-                        <br>
-                        <?php echo '<h1 class="inverse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor suscipit enim ducimus nemo. Magnam iste corrupti sunt quod quo labore eligendi veniam facilis temporibus perferendis? Fugit animi iure maxime error!</h1>
-                            <h1 class="inverse">'.$row["tipo"].'</h1>
-                            <h1 class="inverse">'.$row["vitaminas"].'</h1>
+                    <?php echo '<h1 class"inverse">' . $row["nombre"] . '</h1>
+                        <h2 class="sub-inverse">' . $row["descripcion"] . '</h1>
+                            <h1 class="inverse">' . $row["tipo"] . '</h1>
+                            <h1 class="inverse">' . $row["vitaminas"] . '</h1>
                             ' ?>
-                            <br><br>
-                    </div>
+
+                    <h2 class= "sub-inverse" for="w3review">Danos tu opinion:</h1>
+                    <textarea class="form-control" id="w3review" name="w3review" rows="4" cols="50" placeholder="Escriba aqui su comentario..."></textarea>
+                    <br>
+                    <input class="btn boton" type="submit" value="Comentar">
+                    <br><br>
+
+                    <?php
+
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+                        $comentaioTexto = $_POST["w3review"];
+                        if ($comentaioTexto != null) {
+
+                            $consultarUsuario = "SELECT * FROM usuario WHERE nombre = '$nomusu'";
+                            $resultadoUsuario = mysqli_query($conexion, $consultarUsuario);
+                            $rowUsuario = mysqli_fetch_assoc($resultadoUsuario);
+                            $usuid = $rowUsuario['usuario_id'];
+
+
+                            $insertar = "INSERT INTO comentario(descripcion, idplato, usuario_id) VALUES ('$comentaioTexto',
+                    '$id','$usuid')";
+                            $resultado = mysqli_query($conexion, $insertar);
+                        } else {
+                            echo '<br>Por favor no olvide ingresar un comentario<br>';
+                        }
+                    }
+                    if ($conteo != 0) {
+                        $aumento = 0;
+                        while ($conteo > 1) {
+                            $rowComentario = mysqli_fetch_assoc($resultadoComentario);
+                            $uid = $rowComentario['usuario_id'];
+                            $consultarnombre = "SELECT nombre FROM usuario WHERE usuario_id = '$uid'";
+                            $resultadonombre = mysqli_query($conexion, $consultarnombre);
+                            $rownombre = mysqli_fetch_assoc($resultadonombre);
+                            echo '<div class="panel panel-default">
+                        <div class="panel-heading">' . $rownombre['nombre'] .' dice...</div>
+                        <div class="panel-body">' . $rowComentario['descripcion'] . '</div>
+                        </div>
+                        <br>';
+                            $conteo--;
+                        }
+                    } else {
+                        echo '<h2 class="sub-inverse">No hay comentarios disponibles, sé el primero en comentar</h2>';
+                    }
+                    ?>
+
                 </div>
             </div>
+        </div>
 
-        
+
+
+
+
     </form>
 
 </body>

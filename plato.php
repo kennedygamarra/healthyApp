@@ -50,7 +50,7 @@ $rowComentario = mysqli_fetch_assoc($resultadoComentario);
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <div class="search-container">
-                            <input type="text" placeholder="Buscar.." name="buscar">
+                            <input type="text" class="input-buscar" placeholder="Buscar.." name="buscar">
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </li>
@@ -66,13 +66,17 @@ $rowComentario = mysqli_fetch_assoc($resultadoComentario);
                 <div class="col-md-6 col-center plato">
                     <br>
                     <?php echo '<h1 class"inverse">' . $row["nombre"] . '</h1>
-                        <h2 class="sub-inverse">' . $row["descripcion"] . '</h1>
-                            <h1 class="inverse">' . $row["tipo"] . '</h1>
-                            <h1 class="inverse">' . $row["vitaminas"] . '</h1>
+                        <h1 class="sub-inverse">Ingredientes:</h1>
+                        <h2 class="sub-inverse">' . $row["ingredientes"] . '</h2>
+                        <h1 class="sub-inverse">Preparacion:</h1>
+                        <h2 class="sub-inverse">' . $row["preparacion"] . '</h2>
+                            <h1 class="inverse">Plato ' . $row["tipo"] . '</h1>
+                            <h1 class="sub-inverse">Aporte:</h1>
+                            <h2 class="sub-inverse">' . $row["vitaminas"] . '</h2>
                             ' ?>
 
-                    <h2 class= "sub-inverse" for="w3review">Danos tu opinion:</h1>
-                    <textarea class="form-control" id="w3review" name="w3review" rows="4" cols="50" placeholder="Escriba aqui su comentario..."></textarea>
+                    <h1 class= "sub-inverse" for="w3review">Danos tu opinion:</h1>
+                    <textarea class="form-control comentarios" id="w3review" name="w3review" rows="4" cols="50" placeholder="Escriba aqui su comentario..."></textarea>
                     <br>
                     <input class="btn boton" type="submit" value="Comentar">
                     <br><br>
@@ -93,20 +97,19 @@ $rowComentario = mysqli_fetch_assoc($resultadoComentario);
                             $insertar = "INSERT INTO comentario(descripcion, idplato, usuario_id) VALUES ('$comentaioTexto',
                     '$id','$usuid')";
                             $resultado = mysqli_query($conexion, $insertar);
+                            header('Location: plato.php?id='.$id.'');
                         } else {
                             echo '<br>Por favor no olvide ingresar un comentario<br>';
                         }
                     }
                     if ($conteo != 0) {
-                        $aumento = 0;
-                        while ($conteo > 1) {
-                            $rowComentario = mysqli_fetch_assoc($resultadoComentario);
+                        while ($conteo > 0) {
                             $uid = $rowComentario['usuario_id'];
                             $consultarnombre = "SELECT nombre FROM usuario WHERE usuario_id = '$uid'";
                             $resultadonombre = mysqli_query($conexion, $consultarnombre);
                             $rownombre = mysqli_fetch_assoc($resultadonombre);
                             echo '<div class="panel panel-default">
-                        <div class="panel-heading">' . $rownombre['nombre'] .' dice...</div>
+                        <div class="panel-heading">Usuario ' . $rownombre['nombre'] .' dice:</div>
                         <div class="panel-body">' . $rowComentario['descripcion'] . '</div>
                         </div>
                         <br>';

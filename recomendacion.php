@@ -30,7 +30,7 @@ session_start();
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <div class="search-container">
-                                <input type="text" placeholder="Buscar.." name="buscar">
+                                <input class="input-buscar"type="text" placeholder="Buscar.." name="buscar">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </li>

@@ -31,14 +31,20 @@ h1.inicio {
   color: #ffc857;
 }
 
-h1.inverse ,.plato{
+h1.inverse,h1.sub-inverse ,.plato{
 
   font-family: 'Segoe UI';
   font-style: inherit;
   color: #4b3f72;
   text-align: center;
-  margin: 80px 80px 30px 0px;
+  margin: 80px 60px 30px 0px;
   
+}
+h1.sub-inverse{
+  font-style: inherit;
+  text-align: left;
+  font-size: 25px;
+  margin: 60px 60px 30px 60px;
 }
 
 
@@ -66,7 +72,7 @@ h2.sub-inverse{
   color: #4b3f72;
   text-align: justify;
   font-style: italic;
-  margin: 0px 80px 0px 30px;
+  margin: 0px 60px 0px 30px;
   
 }
 h2 {
@@ -112,12 +118,13 @@ span,
 a {
   color: white;
 }
-button.boton,
+button.boton, input.boton,
 a.button,
 a.buttonInverse {
   text-align: center;
   display: block;
   margin: 0 auto;
+  font-family: 'Segoe UI';
   font-weight: bolder;
   color: #ffffff;
   background-color: #ffc857;
@@ -246,5 +253,31 @@ text-align: center;
   filter: brightness(85%);
   cursor: pointer;
   border-radius: 20px;
+}
+.panel-default{
+  text-align: justify;
+  width: 80%;
+  display: initial;
+  font-family: 'Segoe UI';
+  font-size: 16px;
+  color: #4b3f72;
+  font-weight: 600;
+  
+}
 
+textarea.comentarios{
+  width: 70%;
+  display: initial;
+}
+
+div.search-container{
+  padding-top: 10px;
+}
+
+input.input-buscar{
+  border: none;
+  border-bottom: 1.9px solid #ffc857;
+  background-color: #4b3f72;
+  font-style: italic;
+  font-weight: 450px;
 }

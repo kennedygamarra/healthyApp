@@ -59,7 +59,9 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="inverse">Encuentra la mejor seleccion de platos y recetas para ti</h1>
-                        <h2 class="sub-inverse">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, repudiandae consequatur tempora architecto corrupti soluta veritatis sunt facilis expedita iste eum nam vitae tenetur nemo. Illum ducimus rem quis minus?</h2>
+                        <h2 class="sub-inverse">El alimentarse saludable con una dieta sana  es  aquella ingesta de alimentos que te ayudan mantener, recuperar o mejorar tu salud. 
+Nosotros en Health via queremos lo mejor para ti, por lo que te invitamos a formar parte de este proceso de acto voluntario.
+Health via--> El camino para una buena alimentación.</h2>
                     </div>
 
 
